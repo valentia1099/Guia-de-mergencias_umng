@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="es-CO" data-contraste="normal">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guía de Emergencias · UMNG Campus Cajicá</title>
+<meta name="description" content="Guía interactiva y accesible de emergencias para la Universidad Militar Nueva Granada, Campus Cajicá: línea 123, protocolos oficiales, animaciones, mapa real de puntos de encuentro y ficha médica.">
+<meta name="theme-color" content="#c4161c">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="img/icono-192.png">
+<link rel="apple-touch-icon" href="img/icono-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></symbol>
+<symbol id="i-phone-call" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /> <path d="M14.05 2a9 9 0 0 1 8 7.94" /> <path d="M14.05 6A5 5 0 0 1 18 10" /></symbol>
+<symbol id="i-siren" viewBox="0 0 24 24"><path d="M7 18v-6a5 5 0 1 1 10 0v6" /> <path d="M5 21a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2z" /> <path d="M21 12h1" /> <path d="M18.5 4.5 18 5" /> <path d="M2 12h1" /> <path d="M12 2v1" /> <path d="m4.929 4.929.707.707" /> <path d="M12 12v6" /></symbol>
+<symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" /></symbol>
+<symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2" /></symbol>
+<symbol id="i-heart-pulse" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /> <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27" /></symbol>
+<symbol id="i-shield-alert" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="M12 8v4" /> <path d="M12 16h.01" /></symbol>
+<symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></symbol>
+<symbol id="i-map" viewBox="0 0 24 24"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" /> <path d="M15 5.764v15" /> <path d="M9 3.236v15" /></symbol>
+<symbol id="i-volume-2" viewBox="0 0 24 24"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" /> <path d="M16 9a5 5 0 0 1 0 6" /> <path d="M19.364 18.364a9 9 0 0 0 0-12.728" /></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><rect x="14" y="4" width="4" height="16" rx="1" /> <rect x="6" y="4" width="4" height="16" rx="1" /></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3" /></symbol>
+<symbol id="i-square" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" /></symbol>
+<symbol id="i-headphones" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" /></symbol>
+<symbol id="i-accessibility" viewBox="0 0 24 24"><circle cx="16" cy="4" r="1" /> <path d="m18 19 1-7-6 1" /> <path d="m5 8 3-3 5.5 3-2.36 3.5" /> <path d="M4.24 14.5a5 5 0 0 0 6.88 6" /> <path d="M13.76 17.5a5 5 0 0 0-6.88-6" /></symbol>
+<symbol id="i-wifi" viewBox="0 0 24 24"><path d="M12 20h.01" /> <path d="M2 8.82a15 15 0 0 1 20 0" /> <path d="M5 12.859a10 10 0 0 1 14 0" /> <path d="M8.5 16.429a5 5 0 0 1 7 0" /></symbol>
+<symbol id="i-wifi-off" viewBox="0 0 24 24"><path d="M12 20h.01" /> <path d="M8.5 16.429a5 5 0 0 1 7 0" /> <path d="M5 12.859a10 10 0 0 1 5.17-2.69" /> <path d="M19 12.859a10 10 0 0 0-2.007-1.523" /> <path d="M2 8.82a15 15 0 0 1 4.177-2.643" /> <path d="M22 8.82a15 15 0 0 0-11.288-3.764" /> <path d="m2 2 20 20" /></symbol>
+<symbol id="i-cloud-off" viewBox="0 0 24 24"><path d="m2 2 20 20" /> <path d="M5.782 5.782A7 7 0 0 0 9 19h8.5a4.5 4.5 0 0 0 1.307-.193" /> <path d="M21.532 16.5A4.5 4.5 0 0 0 17.5 10h-1.79A7.008 7.008 0 0 0 10 5.07" /></symbol>
+<symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="m9 12 2 2 4-4" /></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" /> <path d="m6 6 12 12" /></symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></symbol>
+<symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></symbol>
+<symbol id="i-keyboard" viewBox="0 0 24 24"><path d="M10 8h.01" /> <path d="M12 12h.01" /> <path d="M14 8h.01" /> <path d="M16 12h.01" /> <path d="M18 8h.01" /> <path d="M6 8h.01" /> <path d="M7 16h10" /> <path d="M8 12h.01" /> <rect width="20" height="16" x="2" y="4" rx="2" /></symbol>
+<symbol id="i-contrast" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="M12 18a6 6 0 0 0 0-12v12z" /></symbol>
+<symbol id="i-type" viewBox="0 0 24 24"><polyline points="4 7 4 4 20 4 20 7" /> <line x1="9" x2="15" y1="20" y2="20" /> <line x1="12" x2="12" y1="4" y2="20" /></symbol>
+<symbol id="i-life-buoy" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="m4.93 4.93 4.24 4.24" /> <path d="m14.83 9.17 4.24-4.24" /> <path d="m14.83 14.83 4.24 4.24" /> <path d="m9.17 14.83-4.24 4.24" /> <circle cx="12" cy="12" r="4" /></symbol>
+<symbol id="i-hospital" viewBox="0 0 24 24"><path d="M12 6v4" /> <path d="M14 14h-4" /> <path d="M14 18h-4" /> <path d="M14 8h-4" /> <path d="M18 12h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h2" /> <path d="M18 22V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v18" /></symbol>
+<symbol id="i-cross" viewBox="0 0 24 24"><path d="M4 9a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h4a1 1 0 0 1 1 1v4a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-4a1 1 0 0 1 1-1h4a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-4a1 1 0 0 1-1-1V4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4a1 1 0 0 1-1 1z" /></symbol>
+<symbol id="i-user-round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5" /> <path d="M20 21a8 8 0 0 0-16 0" /></symbol>
+<symbol id="i-save" viewBox="0 0 24 24"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" /> <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7" /> <path d="M7 3v4a1 1 0 0 0 1 1h7" /></symbol>
+<symbol id="i-trash-2" viewBox="0 0 24 24"><path d="M3 6h18" /> <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" /> <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" /> <line x1="10" x2="10" y1="11" y2="17" /> <line x1="14" x2="14" y1="11" y2="17" /></symbol>
+<symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" /> <path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6" /> <rect x="6" y="14" width="12" height="8" rx="1" /></symbol>
+<symbol id="i-share-2" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3" /> <circle cx="6" cy="12" r="3" /> <circle cx="18" cy="19" r="3" /> <line x1="8.59" x2="15.42" y1="13.51" y2="17.49" /> <line x1="15.41" x2="8.59" y1="6.51" y2="10.49" /></symbol>
+<symbol id="i-navigation" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11" /></symbol>
+<symbol id="i-locate-fixed" viewBox="0 0 24 24"><line x1="2" x2="5" y1="12" y2="12" /> <line x1="19" x2="22" y1="12" y2="12" /> <line x1="12" x2="12" y1="2" y2="5" /> <line x1="12" x2="12" y1="19" y2="22" /> <circle cx="12" cy="12" r="7" /> <circle cx="12" cy="12" r="3" /></symbol>
+<symbol id="i-external-link" viewBox="0 0 24 24"><path d="M15 3h6v6" /> <path d="M10 14 21 3" /> <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></symbol>
+<symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></symbol>
+<symbol id="i-triangle-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /> <path d="M12 9v4" /> <path d="M12 17h.01" /></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="M12 16v-4" /> <path d="M12 8h.01" /></symbol>
+<symbol id="i-book-open-check" viewBox="0 0 24 24"><path d="M12 21V7" /> <path d="m16 12 2 2 4-4" /> <path d="M22 6V4a1 1 0 0 0-1-1h-5a4 4 0 0 0-4 4 4 4 0 0 0-4-4H3a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h6a3 3 0 0 1 3 3 3 3 0 0 1 3-3h6a1 1 0 0 0 1-1v-1.3" /></symbol>
+<symbol id="i-graduation-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" /> <path d="M22 10v6" /> <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" /></symbol>
+<symbol id="i-fire-extinguisher" viewBox="0 0 24 24"><path d="M15 6.5V3a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3.5" /> <path d="M9 18h8" /> <path d="M18 3h-3" /> <path d="M11 3a6 6 0 0 0-6 6v11" /> <path d="M5 13h4" /> <path d="M17 10a4 4 0 0 0-8 0v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2Z" /></symbol>
+<symbol id="i-backpack" viewBox="0 0 24 24"><path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" /> <path d="M8 10h8" /> <path d="M8 18h8" /> <path d="M8 22v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6" /> <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" /></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4" /> <path d="M22 21v-2a4 4 0 0 0-3-3.87" /> <path d="M16 3.13a4 4 0 0 1 0 7.75" /></symbol>
+<symbol id="i-message-square-text" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /> <path d="M13 8H7" /> <path d="M17 12H7" /></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2" /> <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></symbol>
+<symbol id="i-building-2" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" /> <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" /> <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" /> <path d="M10 6h4" /> <path d="M10 10h4" /> <path d="M10 14h4" /> <path d="M10 18h4" /></symbol>
+<symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3" /> <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" /> <circle cx="18" cy="5" r="3" /></symbol>
+<symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" /> <path d="M20 3v4" /> <path d="M22 5h-4" /> <path d="M4 17v2" /> <path d="M5 18H3" /></symbol>
+<symbol id="i-hand-heart" viewBox="0 0 24 24"><path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16" /> <path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9" /> <path d="m2 15 6 6" /> <path d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z" /></symbol>
+<symbol id="i-stethoscope" viewBox="0 0 24 24"><path d="M11 2v2" /> <path d="M5 2v2" /> <path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1" /> <path d="M8 15a6 6 0 0 0 12 0v-3" /> <circle cx="20" cy="10" r="2" /></symbol>
+<symbol id="i-a-arrow-up" viewBox="0 0 24 24"><path d="M3.5 13h6" /> <path d="m2 16 4.5-9 4.5 9" /> <path d="M18 16V7" /> <path d="m14 11 4-4 4 4" /></symbol>
+<symbol id="i-a-arrow-down" viewBox="0 0 24 24"><path d="M3.5 13h6" /> <path d="m2 16 4.5-9 4.5 9" /> <path d="M18 7v9" /> <path d="m14 12 4 4 4-4" /></symbol>
+<symbol id="i-bell-ring" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" /> <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /> <path d="M4 2C2.8 3.7 2 5.7 2 8" /> <path d="M22 8c0-2.3-.8-4.3-2-6" /></symbol>
+<symbol id="i-circle-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /> <path d="M12 17h.01" /></symbol>
+<symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7" /> <path d="M12 19V5" /></symbol>
+<symbol id="i-rotate-ccw" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /> <path d="M3 3v5h5" /></symbol>
+<symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4" /> <path d="M3.34 19a10 10 0 1 1 17.32 0" /></symbol>
+<symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z" /></symbol>
+<symbol id="i-house" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></symbol>
+<symbol id="i-volume-x" viewBox="0 0 24 24"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" /> <line x1="22" x2="16" y1="9" y2="15" /> <line x1="16" x2="22" y1="9" y2="15" /></symbol>
+</svg>
+
+<!-- ====== Saltos de bloque (WCAG 2.4.1) ====== -->
+<nav class="saltos" aria-label="Saltos de bloque">
+  <a href="#contenido">Saltar al contenido principal</a>
+  <a href="#llamar-123">Ir al botón de llamada 123</a>
+  <a href="#protocolos">Ir a los protocolos</a>
+  <a href="#mapa">Ir al mapa del campus</a>
+  <a href="#directorio">Ir al directorio de teléfonos</a>
+</nav>
+
+<!-- ====== Barra de estado / accesibilidad ====== -->
+<aside class="estado" id="estado" aria-label="Estado de conexión y herramientas de accesibilidad">
+  <p class="estado__red" role="status" aria-live="polite" style="margin:0">
+    <span class="estado__punto" aria-hidden="true"></span>
+    <span id="estado-texto">Conectado</span>
+    <span id="estado-offline" class="sr-only"></span>
+  </p>
+  <div class="estado__herr" role="toolbar" aria-label="Herramientas de accesibilidad">
+    <button class="estado__btn" type="button" id="btn-texto-menos" aria-label="Reducir tamaño del texto"><svg class="ico" aria-hidden="true"><use href="#i-a-arrow-down"/></svg></button>
+    <button class="estado__btn" type="button" id="btn-texto-mas" aria-label="Aumentar tamaño del texto"><svg class="ico" aria-hidden="true"><use href="#i-a-arrow-up"/></svg></button>
+    <button class="estado__btn" type="button" id="btn-contraste" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#i-contrast"/></svg><span>Contraste</span></button>
+    <button class="estado__btn" type="button" id="btn-movimiento" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#i-pause"/></svg><span>Sin animación</span></button>
+    <button class="estado__btn" type="button" id="btn-atajos" aria-haspopup="dialog"><svg class="ico" aria-hidden="true"><use href="#i-keyboard"/></svg><span>Atajos</span></button>
+  </div>
+</aside>
+
+<!-- ====== Botón de pánico de alta visibilidad (one-tap SOS) ====== -->
+<div class="sos" id="sos" role="region" aria-label="Llamada de emergencia">
+  <div class="contenedor sos__fila">
+    <a class="sos__llamar" id="llamar-123" href="tel:123" aria-label="Llamar ahora a la Línea Única de Emergencias 1 2 3">
+      <svg class="ico ico--lg" aria-hidden="true"><use href="#i-phone-call"/></svg>
+      <span>LLAMAR</span><span class="num" aria-hidden="true">123</span>
+    </a>
+    <button class="sos__secundario" type="button" id="btn-ubicacion" aria-label="Compartir mi ubicación" aria-describedby="ubic-desc">
+      <svg class="ico" aria-hidden="true"><use href="#i-locate-fixed"/></svg><span class="txt">Compartir ubicación</span>
+    </button>
+    <a class="sos__secundario" href="tel:+576016500000" aria-label="Llamar al conmutador de la Universidad Militar, 601 650 0000, y pedir la Brigada de Emergencias">
+      <svg class="ico" aria-hidden="true"><use href="#i-building-2"/></svg><span class="txt">UMNG (601) 650 0000</span>
+    </a>
+    <span id="ubic-desc" class="sr-only">Obtiene tu ubicación GPS y la envía por mensaje o la copia para dársela al operador del 123.</span>
+  </div>
+</div>
+
+<!-- ====== Navegación principal ====== -->
+<nav class="nav" aria-label="Secciones de la guía">
+  <div class="contenedor">
+    <ul class="nav__lista">
+      <li><a href="#protocolos"><svg class="ico" aria-hidden="true"><use href="#i-shield-alert"/></svg>Protocolos</a></li>
+      <li><a href="#animaciones"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg>Animaciones</a></li>
+      <li><a href="#mapa"><svg class="ico" aria-hidden="true"><use href="#i-map"/></svg>Mapa del campus</a></li>
+      <li><a href="#directorio"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Directorio</a></li>
+      <li><a href="#ficha"><svg class="ico" aria-hidden="true"><use href="#i-heart-pulse"/></svg>Ficha médica</a></li>
+      <li><a href="#kit"><svg class="ico" aria-hidden="true"><use href="#i-backpack"/></svg>Kit</a></li>
+      <li><a href="#fuentes"><svg class="ico" aria-hidden="true"><use href="#i-book-open-check"/></svg>Fuentes</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="contenido" tabindex="-1">
+
+<!-- ====== Inicio ====== -->
+<header class="hero" id="inicio" data-seccion="inicio">
+  <div class="contenedor hero__grid">
+    <div>
+      <p class="hero__eyebrow"><svg class="ico" aria-hidden="true"><use href="#i-map-pin"/></svg>Universidad Militar Nueva Granada · Campus Cajicá</p>
+      <h1>Guía de Emergencias</h1>
+      <!-- Audio antes del texto: patrón predecible para lectores de pantalla -->
+      <div class="audio" data-src="audios/orni-bienvenida.mp3" data-titulo="Bienvenida de Orni" data-dur="24">
+        <audio controls preload="none" src="audios/orni-bienvenida.mp3"></audio>
+        <p class="audio__texto">¡Hola! Soy Orni, brigadista de la Universidad Militar Nueva Granada, sede Campus Cajicá. Te acompaño por esta guía de emergencias. Si estás viviendo una emergencia ahora mismo, toca el botón rojo de arriba: te conecta directamente con la línea 123. Puedes navegar con el teclado: presiona la tecla Tab para avanzar, y la tecla A para escuchar cualquier sección en voz alta.</p>
+      </div>
+      <p class="hero__lead">Qué hacer antes, durante y después de un sismo, un incendio o una emergencia médica en el campus. Información verificada en fuentes oficiales, con audio, animaciones paso a paso y el mapa real de la sede.</p>
+      <div class="hero__acciones">
+        <a class="accion" href="#protocolos"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-shield-alert"/></svg>Protocolos<small>Sismo, incendio, médico, riesgo</small></a>
+        <a class="accion" href="#animaciones"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-play"/></svg>Aprende viendo<small>5 animaciones paso a paso</small></a>
+        <a class="accion" href="#mapa"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-map-pin"/></svg>Puntos de encuentro<small>Mapa real del campus</small></a>
+        <a class="accion" href="#ficha"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-heart-pulse"/></svg>Mi ficha médica<small>Se guarda en tu celular</small></a>
+      </div>
+    </div>
+    <div class="hero__media" aria-hidden="true"><img src="img/pato-reposo.webp" alt="" width="300" height="425"></div>
+  </div>
+</header>
+
+<!-- ====== 1. Protocolos ====== -->
+<section class="seccion" id="protocolos" aria-labelledby="t-protocolos" data-seccion="protocolos">
+  <div class="contenedor">
+    <div class="seccion__cab">
+      <div class="seccion__titulo"><span class="seccion__num" aria-hidden="true">1</span><h2 id="t-protocolos">Qué hacer según la emergencia</h2></div>
+    </div>
+    <div class="audio" data-src="audios/orni-tour-categorias.mp3" data-titulo="Escuchar: cómo usar esta sección" data-dur="12">
+      <audio controls preload="none" src="audios/orni-tour-categorias.mp3"></audio>
+      <p class="audio__texto">Aquí eliges el tipo de emergencia: sismo, incendio, emergencia médica o seguridad. Cada ficha te dice qué hacer antes, durante y después, y tiene su propio botón para escucharla.</p>
+    </div>
+    <p class="bajada">Filtra por tipo de evento. Cada ficha tiene pestañas <strong>Antes</strong>, <strong>Durante</strong> y <strong>Después</strong>, un botón para escucharla y el enlace a su fuente oficial.</p>
+
+    <div role="group" aria-label="Filtrar protocolos por categoría">
+      <ul class="filtros">
+        <li><button class="chip" type="button" data-filtro="todos" aria-pressed="true"><svg class="ico" aria-hidden="true"><use href="#i-sparkles"/></svg>Todos</button></li>
+        <li><button class="chip chip--sismico" type="button" data-filtro="sismico" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#i-activity"/></svg>Sísmico</button></li>
+        <li><button class="chip chip--incendio" type="button" data-filtro="incendio" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#i-flame"/></svg>Incendio</button></li>
+        <li><button class="chip chip--medico" type="button" data-filtro="medico" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#i-heart-pulse"/></svg>Médico</button></li>
+        <li><button class="chip chip--seguridad" type="button" data-filtro="seguridad" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#i-shield-alert"/></svg>Seguridad / Riesgo</button></li>
+      </ul>
+    </div>
+    <p id="filtro-estado" class="sr-only" aria-live="polite"></p>
+
+    <div class="rejilla" id="lista-protocolos">
+
+      <!-- SISMO -->
+      <article class="tarjeta tarjeta--sismico" data-cat="sismico" aria-labelledby="p-sismo">
+        <div class="tarjeta__cab">
+          <span class="tarjeta__icono" aria-hidden="true"><svg class="ico"><use href="#i-activity"/></svg></span>
+          <div><span class="etiqueta">Sísmico</span><h3 id="p-sismo">Sismo o temblor</h3></div>
+        </div>
+        <div class="audio audio--compacto" data-src="audios/orni-sismo.mp3" data-titulo="Escuchar protocolo de sismo" data-dur="38">
+          <audio controls preload="none" src="audios/orni-sismo.mp3"></audio>
+          <p class="audio__texto">Qué hacer en un sismo. Durante el movimiento, no corras. Agáchate, cúbrete y sujétate. Agáchate sobre tus manos y rodillas. Cubre tu cabeza y cuello debajo de una mesa firme, o junto a una pared interior, lejos de ventanas. Sujétate hasta que el movimiento termine. No uses ascensores y no te ubiques bajo el marco de las puertas. Cuando pare el sismo, revisa si hay heridos, sal con calma por la ruta de evacuación señalizada y dirígete al punto de encuentro. Prepárate para réplicas. Si alguien está atrapado o herido, llama a la línea 123.</p>
+        </div>
+        <p class="clave">Agáchate, cúbrete y sujétate. No corras durante el movimiento.</p>
+        <div class="tabs">
+          <div class="tabs__lista" role="tablist" aria-label="Fases del sismo">
+            <button class="tabs__tab" role="tab" data-fase="antes" aria-selected="false" aria-controls="sis-1" id="sis-t1" tabindex="-1">Antes</button>
+            <button class="tabs__tab" role="tab" data-fase="durante" aria-selected="true" aria-controls="sis-2" id="sis-t2">Durante</button>
+            <button class="tabs__tab" role="tab" data-fase="despues" aria-selected="false" aria-controls="sis-3" id="sis-t3" tabindex="-1">Después</button>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="sis-1" aria-labelledby="sis-t1" tabindex="0" hidden>
+            <ul><li>Identifica en tu salón las zonas seguras: bajo mesas firmes o junto a columnas y muros interiores, lejos de vidrios.</li><li>Ubica la ruta de evacuación y el punto de encuentro de tu edificio.</li><li>Lleva silbato, linterna y tus medicamentos. Participa en los simulacros.</li></ul>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="sis-2" aria-labelledby="sis-t2" tabindex="0">
+            <ol><li><strong>Agáchate</strong> sobre manos y rodillas.</li><li><strong>Cúbrete</strong> cabeza y cuello bajo una mesa firme.</li><li><strong>Sujétate</strong> hasta que termine el movimiento.</li><li>No uses ascensores ni te ubiques bajo marcos de puertas. Afuera: aléjate de postes, cables y fachadas.</li></ol>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="sis-3" aria-labelledby="sis-t3" tabindex="0" hidden>
+            <ul><li>Revisa si tú y quienes te rodean están heridos.</li><li>Evacúa caminando por la ruta señalizada hasta el punto de encuentro. Espera réplicas.</li><li>Si quedas atrapado, haz señales (silbato, golpes). Prefiere mensajes de texto: la red se satura.</li><li>No reingreses hasta que la Brigada lo autorice.</li></ul>
+          </div>
+        </div>
+        <p class="fuente">Fuentes: <a href="https://portal.gestiondelriesgo.gov.co/" target="_blank" rel="noopener noreferrer">UNGRD Colombia<span class="sr-only"> (abre en otra pestaña)</span></a> · <a href="https://www.shakeout.org/dropcoverholdon/" target="_blank" rel="noopener noreferrer">Great ShakeOut: Drop, Cover, Hold On<span class="sr-only"> (abre en otra pestaña)</span></a></p>
+        <a class="boton boton--chico" href="#animaciones" data-ir-anim="sismo"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg>Ver animación</a>
+      </article>
+
+      <!-- INCENDIO -->
+      <article class="tarjeta tarjeta--incendio" data-cat="incendio" aria-labelledby="p-incendio">
+        <div class="tarjeta__cab">
+          <span class="tarjeta__icono" aria-hidden="true"><svg class="ico"><use href="#i-flame"/></svg></span>
+          <div><span class="etiqueta">Incendio</span><h3 id="p-incendio">Incendio y humo</h3></div>
+        </div>
+        <div class="audio audio--compacto" data-src="audios/orni-incendio.mp3" data-titulo="Escuchar protocolo de incendio" data-dur="32">
+          <audio controls preload="none" src="audios/orni-incendio.mp3"></audio>
+          <p class="audio__texto">Qué hacer en un incendio. Da la alarma y sal de inmediato. El humo es más peligroso que el fuego: si hay humo, agáchate y avanza a gatas, con la cabeza cerca del piso, donde el aire es más limpio. Antes de abrir una puerta, tócala con el dorso de la mano; si está caliente, no la abras y usa otra salida. Nunca uses el ascensor y nunca regreses por tus objetos. Si tu ropa se prende, detente, tírate al suelo y rueda. Ya afuera, ve al punto de encuentro y llama al 123.</p>
+        </div>
+        <p class="clave">El humo mata antes que el fuego: sal agachado y nunca regreses.</p>
+        <div class="tabs">
+          <div class="tabs__lista" role="tablist" aria-label="Fases del incendio">
+            <button class="tabs__tab" role="tab" data-fase="antes" aria-selected="false" aria-controls="inc-1" id="inc-t1" tabindex="-1">Antes</button>
+            <button class="tabs__tab" role="tab" data-fase="durante" aria-selected="true" aria-controls="inc-2" id="inc-t2">Durante</button>
+            <button class="tabs__tab" role="tab" data-fase="despues" aria-selected="false" aria-controls="inc-3" id="inc-t3" tabindex="-1">Después</button>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="inc-1" aria-labelledby="inc-t1" tabindex="0" hidden>
+            <ul><li>Ubica extintores, pulsadores de alarma y dos salidas en cada edificio.</li><li>No bloquees pasillos, escaleras ni puertas de emergencia.</li><li>Reporta cables pelados, enchufes sobrecargados o fugas en laboratorios.</li></ul>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="inc-2" aria-labelledby="inc-t2" tabindex="0">
+            <ol><li>Activa la alarma y avisa en voz alta.</li><li>Sal de inmediato, sin recoger objetos.</li><li>Con humo: <strong>agáchate y avanza a gatas</strong>.</li><li>Toca la puerta con el dorso de la mano; si está caliente, usa otra salida.</li><li>No uses ascensores. Si tu ropa arde: <strong>detente, tírate y rueda</strong>.</li></ol>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="inc-3" aria-labelledby="inc-t3" tabindex="0" hidden>
+            <ul><li>Ve al punto de encuentro y repórtate con tu docente o la Brigada.</li><li>Llama al <a href="tel:123">123</a> o a Bomberos <a href="tel:119">119</a> desde un lugar seguro.</li><li>No reingreses hasta que Bomberos o la Brigada lo autoricen.</li></ul>
+          </div>
+        </div>
+        <p class="fuente">Fuentes: <a href="https://www.nfpa.org/education-and-research/home-fire-safety/escape-planning" target="_blank" rel="noopener noreferrer">NFPA – Plan de escape<span class="sr-only"> (abre en otra pestaña)</span></a> · <a href="https://www.nfpa.org/news-blogs-and-articles/blogs/2022/03/31/not-your-mothers-stop-drop-and-roll-evolution-of-a-key-fire-safety-message" target="_blank" rel="noopener noreferrer">NFPA – Detente, tírate y rueda<span class="sr-only"> (abre en otra pestaña)</span></a></p>
+        <a class="boton boton--chico" href="#animaciones" data-ir-anim="humo"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg>Ver animación</a>
+      </article>
+
+      <!-- EXTINTOR -->
+      <article class="tarjeta tarjeta--incendio" data-cat="incendio" aria-labelledby="p-extintor">
+        <div class="tarjeta__cab">
+          <span class="tarjeta__icono" aria-hidden="true"><svg class="ico"><use href="#i-fire-extinguisher"/></svg></span>
+          <div><span class="etiqueta">Incendio</span><h3 id="p-extintor">Uso del extintor: método PASS</h3></div>
+        </div>
+        <div class="audio audio--compacto" data-src="audios/orni-extintor.mp3" data-titulo="Escuchar uso del extintor" data-dur="33">
+          <audio controls preload="none" src="audios/orni-extintor.mp3"></audio>
+          <p class="audio__texto">Cómo usar un extintor con el método PASS. Úsalo solo si el fuego es pequeño, tienes una salida a tu espalda y alguien ya dio la alarma. Uno: jala el seguro, rompiendo el precinto. Dos: apunta la boquilla hacia la base del fuego, no a las llamas. Tres: presiona la palanca con firmeza. Cuatro: barre de lado a lado sobre la base del fuego hasta apagarlo. Retrocede sin dar la espalda, porque el fuego puede reavivarse. Si el fuego crece, sal de inmediato y llama al 123.</p>
+        </div>
+        <p class="clave">Solo si el fuego es pequeño, ya se dio la alarma y tienes la salida a tu espalda.</p>
+        <ol class="pasos" aria-label="Método PASS">
+          <li><span><strong>P · Jala</strong> el pasador (rompe el precinto).</span></li>
+          <li><span><strong>A · Apunta</strong> la boquilla a la <em>base</em> del fuego.</span></li>
+          <li><span><strong>P · Presiona</strong> la palanca con firmeza.</span></li>
+          <li><span><strong>A · Abanica</strong> de lado a lado hasta apagarlo. Vigila que no se reavive.</span></li>
+        </ol>
+        <p class="fuente">Fuente: <a href="https://www.osha.gov/etools/evacuation-plans-procedures/emergency-standards/portable-extinguishers/use" target="_blank" rel="noopener noreferrer">OSHA – Uso del extintor portátil (PASS)<span class="sr-only"> (abre en otra pestaña)</span></a></p>
+        <a class="boton boton--chico" href="#animaciones" data-ir-anim="extintor"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg>Ver animación</a>
+      </article>
+
+      <!-- RCP -->
+      <article class="tarjeta tarjeta--medico" data-cat="medico" aria-labelledby="p-rcp">
+        <div class="tarjeta__cab">
+          <span class="tarjeta__icono" aria-hidden="true"><svg class="ico"><use href="#i-heart-pulse"/></svg></span>
+          <div><span class="etiqueta">Médico</span><h3 id="p-rcp">Paro cardíaco: RCP solo con las manos</h3></div>
+        </div>
+        <div class="audio audio--compacto" data-src="audios/orni-rcp.mp3" data-titulo="Escuchar RCP solo con las manos" data-dur="42">
+          <audio controls preload="none" src="audios/orni-rcp.mp3"></audio>
+          <p class="audio__texto">Reanimación con solo las manos, para adultos. Primero, verifica que el lugar sea seguro. Toca a la persona por los hombros y pregúntale en voz alta si está bien. Si no responde y no respira con normalidad, llama al 123, pon el altavoz y pide un desfibrilador. Coloca el talón de una mano en el centro del pecho, sobre la mitad inferior del esternón, y la otra mano encima. Con los brazos rectos, empuja fuerte y rápido: al menos cinco centímetros de profundidad, a un ritmo de cien a ciento veinte compresiones por minuto. Deja que el pecho vuelva a su posición después de cada compresión. No pares hasta que llegue ayuda o el desfibrilador indique otra cosa.</p>
+        </div>
+        <p class="clave">No responde y no respira normal → llama al 123 y empuja fuerte y rápido: 100–120 por minuto, al menos 5 cm.</p>
+        <ol class="pasos" aria-label="Pasos de la RCP">
+          <li><span>Verifica que el lugar sea seguro.</span></li>
+          <li><span>Toca sus hombros y pregunta en voz alta. Mira si respira normalmente.</span></li>
+          <li><span>Llama al <a href="tel:123">123</a> en altavoz y pide un desfibrilador (DEA).</span></li>
+          <li><span>Talón de la mano en el centro del pecho (mitad inferior del esternón), la otra encima, brazos rectos.</span></li>
+          <li><span>Comprime <strong>al menos 5 cm</strong> (sin pasar de 6 cm) a <strong>100–120 por minuto</strong> y deja que el pecho regrese por completo.</span></li>
+          <li><span>Usa el DEA en cuanto llegue y sigue sus instrucciones de voz.</span></li>
+        </ol>
+        <p class="fuente">Fuente: <a href="https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support" target="_blank" rel="noopener noreferrer">American Heart Association – Guías 2025, Soporte Vital Básico<span class="sr-only"> (abre en otra pestaña)</span></a> · <a href="https://www.cruzrojacolombiana.org/" target="_blank" rel="noopener noreferrer">Cruz Roja Colombiana – cursos<span class="sr-only"> (abre en otra pestaña)</span></a></p>
+        <a class="boton boton--chico" href="#animaciones" data-ir-anim="rcp"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg>Ver animación y metrónomo</a>
+      </article>
+
+      <!-- HEMORRAGIA -->
+      <article class="tarjeta tarjeta--medico" data-cat="medico" aria-labelledby="p-hemo">
+        <div class="tarjeta__cab">
+          <span class="tarjeta__icono" aria-hidden="true"><svg class="ico"><use href="#i-droplet"/></svg></span>
+          <div><span class="etiqueta">Médico</span><h3 id="p-hemo">Sangrado abundante</h3></div>
+        </div>
+        <div class="audio audio--compacto" data-tts="true" data-titulo="Escuchar (voz del dispositivo)">
+          <p class="audio__texto">Sangrado abundante. Llama al 123. Protégete con guantes si los tienes. Presiona directa y firmemente sobre la herida con ambas manos, sin soltar. Si la herida es profunda, rellénala con una tela limpia o gasa y sigue presionando. Si la tela se empapa, no la retires: pon más encima. Si el sangrado es en un brazo o una pierna y no se detiene, una persona entrenada puede aplicar un torniquete por encima de la herida. Mantén a la persona abrigada hasta que llegue ayuda.</p>
+        </div>
+        <p class="clave">Presión directa, firme y continua sobre la herida.</p>
+        <ol class="pasos" aria-label="Pasos ante sangrado abundante">
+          <li><span>Llama al <a href="tel:123">123</a>. Usa guantes si tienes.</span></li>
+          <li><span><strong>Presiona</strong> fuerte con las manos y sin soltar.</span></li>
+          <li><span>Herida profunda: <strong>rellénala</strong> con tela limpia o gasa y presiona. Si se empapa, no la retires: agrega más.</span></li>
+          <li><span>Brazo o pierna que no para: <strong>torniquete</strong> por encima de la herida (si estás entrenado).</span></li>
+        </ol>
+        <p class="fuente">Fuente: <a href="https://www.stopthebleed.org/media/plpjtq5p/25_tr_stb_handout_4x6_acslogo.pdf" target="_blank" rel="noopener noreferrer">Stop the Bleed – American College of Surgeons (3 formas de controlar el sangrado)<span class="sr-only"> (abre en otra pestaña)</span></a></p>
+      </article>
+
+      <!-- ATRAGANTAMIENTO -->
+      <article class="tarjeta tarjeta--medico" data-cat="medico" aria-labelledby="p-atra">
+        <div class="tarjeta__cab">
+          <span class="tarjeta__icono" aria-hidden="true"><svg class="ico"><use href="#i-hand-heart"/></svg></span>
+          <div><span class="etiqueta">Médico</span><h3 id="p-atra">Atragantamiento (adulto)</h3></div>
+        </div>
+        <div class="audio audio--compacto" data-tts="true" data-titulo="Escuchar (voz del dispositivo)">
+          <p class="audio__texto">Atragantamiento en un adulto. Si la persona puede toser, anímala a seguir tosiendo. Si no puede hablar, toser ni respirar, pide que alguien llame al 123. Da cinco golpes firmes en la espalda, entre los omóplatos, con el talón de la mano. Luego da cinco compresiones abdominales: párate detrás, pon tu puño justo encima del ombligo, cúbrelo con la otra mano y presiona rápido hacia adentro y hacia arriba. Repite cinco y cinco hasta que expulse el objeto. Si pierde el conocimiento, acuéstala en el piso e inicia RCP.</p>
+        </div>
+        <p class="clave">No puede hablar, toser ni respirar → 5 golpes en la espalda + 5 compresiones abdominales.</p>
+        <ol class="pasos" aria-label="Pasos ante atragantamiento">
+          <li><span>Si tose con fuerza, anímala a seguir tosiendo.</span></li>
+          <li><span>Si no puede hablar ni respirar: que alguien llame al <a href="tel:123">123</a>.</span></li>
+          <li><span><strong>5 golpes</strong> en la espalda entre los omóplatos, luego <strong>5 compresiones abdominales</strong> (puño sobre el ombligo, hacia adentro y arriba). Repite.</span></li>
+          <li><span>Si pierde el conocimiento: al piso e inicia RCP.</span></li>
+        </ol>
+        <p class="fuente">Fuente: <a href="https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support" target="_blank" rel="noopener noreferrer">American Heart Association – Guías 2025 (obstrucción de vía aérea)<span class="sr-only"> (abre en otra pestaña)</span></a></p>
+      </article>
+
+      <!-- GAS -->
+      <article class="tarjeta tarjeta--seguridad" data-cat="seguridad" aria-labelledby="p-gas">
+        <div class="tarjeta__cab">
+          <span class="tarjeta__icono" aria-hidden="true"><svg class="ico"><use href="#i-triangle-alert"/></svg></span>
+          <div><span class="etiqueta">Riesgo</span><h3 id="p-gas">Olor a gas o fuga química</h3></div>
+        </div>
+        <div class="audio audio--compacto" data-tts="true" data-titulo="Escuchar (voz del dispositivo)">
+          <p class="audio__texto">Olor a gas o fuga química. No enciendas ni apagues interruptores, no uses fósforos ni encendedores. Abre puertas y ventanas, cierra la llave de paso solo si es seguro, y sal del lugar. Avisa a la Brigada y llama al 123 o a Bomberos, el 119, desde afuera. No regreses hasta que lo autoricen.</p>
+        </div>
+        <p class="clave">No actives interruptores ni llamas. Ventila y sal.</p>
+        <ol class="pasos" aria-label="Pasos ante olor a gas">
+          <li><span>No accionar interruptores, fósforos ni encendedores.</span></li>
+          <li><span>Abre puertas y ventanas; cierra la llave de paso si es seguro.</span></li>
+          <li><span>Sal y avisa a la Brigada. Llama al <a href="tel:123">123</a> / <a href="tel:119">119</a> desde afuera.</span></li>
+        </ol>
+        <p class="fuente">Fuente: <a href="https://portal.gestiondelriesgo.gov.co/" target="_blank" rel="noopener noreferrer">UNGRD Colombia<span class="sr-only"> (abre en otra pestaña)</span></a></p>
+      </article>
+
+      <!-- SITUACIÓN DE RIESGO -->
+      <article class="tarjeta tarjeta--seguridad" data-cat="seguridad" aria-labelledby="p-riesgo">
+        <div class="tarjeta__cab">
+          <span class="tarjeta__icono" aria-hidden="true"><svg class="ico"><use href="#i-shield-alert"/></svg></span>
+          <div><span class="etiqueta">Seguridad</span><h3 id="p-riesgo">Persona o situación de riesgo</h3></div>
+        </div>
+        <div class="audio audio--compacto" data-tts="true" data-titulo="Escuchar (voz del dispositivo)">
+          <p class="audio__texto">Persona o situación de riesgo en el campus. No confrontes. Aléjate y ponte a salvo. Informa a la seguridad del campus a través del conmutador de la universidad y llama al 123 con una descripción: dónde, qué está pasando, cómo es la persona y hacia dónde se dirige. Ante un ataque armado: huye si hay una ruta segura; si no puedes, escóndete, cierra con seguro, apaga luces y silencia el celular; actúa para defenderte solo como último recurso.</p>
+        </div>
+        <p class="clave">No confrontes. Ponte a salvo y reporta.</p>
+        <ol class="pasos" aria-label="Pasos ante situación de riesgo">
+          <li><span>Aléjate a un lugar seguro.</span></li>
+          <li><span>Reporta a la universidad <a href="tel:+576016500000">(601) 650 0000</a> y al <a href="tel:123">123</a>: dónde, qué, descripción, dirección de huida.</span></li>
+          <li><span>Ataque armado: <strong>huye</strong>; si no puedes, <strong>escóndete</strong> (seguro, luces apagadas, celular en silencio); defenderte solo como último recurso.</span></li>
+        </ol>
+        <p class="fuente">Fuente: <a href="https://www.cisa.gov/resources-tools/resources/active-shooter-poster" target="_blank" rel="noopener noreferrer">CISA – Afiche de preparación ante tirador activo<span class="sr-only"> (abre en otra pestaña)</span></a></p>
+      </article>
+
+      <!-- TORMENTA -->
+      <article class="tarjeta tarjeta--seguridad" data-cat="seguridad" aria-labelledby="p-rayo">
+        <div class="tarjeta__cab">
+          <span class="tarjeta__icono" aria-hidden="true"><svg class="ico"><use href="#i-zap"/></svg></span>
+          <div><span class="etiqueta">Riesgo natural</span><h3 id="p-rayo">Tormenta eléctrica</h3></div>
+        </div>
+        <div class="audio audio--compacto" data-tts="true" data-titulo="Escuchar (voz del dispositivo)">
+          <p class="audio__texto">Tormenta eléctrica. Cuando truena, el rayo está lo bastante cerca para alcanzarte. Sal de las canchas y zonas abiertas y entra a un edificio. No te refugies bajo árboles aislados ni junto a estructuras metálicas. Espera treinta minutos después del último trueno antes de volver a salir.</p>
+        </div>
+        <p class="clave">Si truena, entra a un edificio. Espera 30 minutos tras el último trueno.</p>
+        <ul>
+          <li>Sal de canchas y zonas abiertas del campus.</li>
+          <li>No te refugies bajo árboles aislados ni estructuras metálicas.</li>
+          <li>Aléjate del agua y de cercas o rejas metálicas.</li>
+        </ul>
+        <p class="fuente">Fuente: <a href="https://www.weather.gov/safety/lightning-safety" target="_blank" rel="noopener noreferrer">NOAA – Seguridad ante rayos<span class="sr-only"> (abre en otra pestaña)</span></a></p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====== 2. Animaciones ====== -->
+<section class="seccion" id="animaciones" aria-labelledby="t-animaciones" data-seccion="animaciones">
+  <div class="contenedor">
+    <div class="seccion__cab">
+      <div class="seccion__titulo"><span class="seccion__num" aria-hidden="true">2</span><h2 id="t-animaciones">Aprende viendo: animaciones paso a paso</h2></div>
+    </div>
+    <div class="audio" data-src="audios/orni-tour-animaciones.mp3" data-titulo="Escuchar: qué muestran las animaciones" data-dur="15">
+      <audio controls preload="none" src="audios/orni-tour-animaciones.mp3"></audio>
+      <p class="audio__texto">Estas animaciones te enseñan paso a paso: cómo protegerte en un sismo, el ritmo de las compresiones de reanimación, el uso del extintor, cómo salir por debajo del humo y cómo llegar al punto de encuentro. Cada una tiene su descripción en audio.</p>
+    </div>
+    <p class="bajada">Elige un caso. Debajo de cada animación verás el paso actual resaltado; cada animación tiene una descripción completa para lectores de pantalla y su narración en audio.</p>
+
+    <div class="anim">
+      <div class="anim__tabs" role="tablist" aria-label="Animaciones disponibles">
+        <button class="anim__tab" role="tab" id="at-sismo" aria-controls="ap-panel" aria-selected="true" data-anim="sismo"><svg class="ico" aria-hidden="true"><use href="#i-activity"/></svg>Sismo</button>
+        <button class="anim__tab" role="tab" id="at-rcp" aria-controls="ap-panel" aria-selected="false" tabindex="-1" data-anim="rcp"><svg class="ico" aria-hidden="true"><use href="#i-heart-pulse"/></svg>RCP</button>
+        <button class="anim__tab" role="tab" id="at-extintor" aria-controls="ap-panel" aria-selected="false" tabindex="-1" data-anim="extintor"><svg class="ico" aria-hidden="true"><use href="#i-fire-extinguisher"/></svg>Extintor PASS</button>
+        <button class="anim__tab" role="tab" id="at-humo" aria-controls="ap-panel" aria-selected="false" tabindex="-1" data-anim="humo"><svg class="ico" aria-hidden="true"><use href="#i-flame"/></svg>Salir bajo el humo</button>
+        <button class="anim__tab" role="tab" id="at-punto-encuentro" aria-controls="ap-panel" aria-selected="false" tabindex="-1" data-anim="punto-encuentro"><svg class="ico" aria-hidden="true"><use href="#i-route"/></svg>Punto de encuentro</button>
+      </div>
+
+      <div class="anim__panel" role="tabpanel" id="ap-panel" aria-labelledby="at-sismo">
+        <div>
+          <div class="anim__escenario">
+            <div class="anim__lottie" id="lottie-escenario" role="img" aria-label="Animación"></div>
+          </div>
+          <p class="anim__rotulo" id="anim-rotulo" aria-hidden="true"></p>
+          <div class="anim__controles" style="margin-top:10px">
+            <button class="boton" type="button" id="anim-play" aria-pressed="true"><svg class="ico" aria-hidden="true"><use href="#i-pause"/></svg><span>Pausar</span></button>
+            <button class="boton" type="button" id="anim-reiniciar"><svg class="ico" aria-hidden="true"><use href="#i-rotate-ccw"/></svg>Reiniciar</button>
+            <button class="boton" type="button" id="anim-vel" aria-label="Velocidad de la animación: normal">Velocidad 1×</button>
+          </div>
+        </div>
+        <div>
+          <h3 id="anim-titulo">Sismo</h3>
+          <p id="anim-desc"></p>
+          <div class="audio audio--compacto" id="anim-audio" data-src="audios/orni-sismo.mp3" data-titulo="Narración de la animación" data-dur="38">
+            <audio controls preload="none" src="audios/orni-sismo.mp3"></audio>
+            <p class="audio__texto"></p>
+          </div>
+          <ol class="pasos" id="anim-pasos" aria-label="Pasos de la animación"></ol>
+          <div class="metronomo" id="metronomo" hidden>
+            <h4 style="margin:0">Practica el ritmo: metrónomo de 110 por minuto</h4>
+            <p style="margin:0">Pon las manos sobre un cojín y comprime con cada sonido. Vibra en celulares compatibles.</p>
+            <div class="metronomo__fila">
+              <button class="boton boton--primario" type="button" id="metro-btn" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg><span>Iniciar metrónomo</span></button>
+              <span class="metronomo__latido" id="metro-latido" aria-hidden="true"></span>
+              <span class="metronomo__cuenta" id="metro-cuenta" aria-live="off">0</span><span>compresiones</span>
+            </div>
+            <p class="sr-only" id="metro-anuncio" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 3. Mapa ====== -->
+<section class="seccion" id="mapa" aria-labelledby="t-mapa" data-seccion="mapa">
+  <div class="contenedor">
+    <div class="seccion__cab">
+      <div class="seccion__titulo"><span class="seccion__num" aria-hidden="true">3</span><h2 id="t-mapa">Mapa del Campus Cajicá: encuentro y enfermería</h2></div>
+    </div>
+    <div class="audio" data-src="audios/orni-tour-mapa.mp3" data-titulo="Escuchar: cómo leer el mapa" data-dur="16">
+      <audio controls preload="none" src="audios/orni-tour-mapa.mp3"></audio>
+      <p class="audio__texto">Este es el mapa real del Campus Cajicá. Los marcadores verdes son zonas abiertas para reunirse después de evacuar, y la cruz roja es la enfermería, junto a las canchas. Debajo del mapa tienes la misma lista en texto, con botones para abrir la ruta en tu celular.</p>
+    </div>
+    <div class="audio audio--compacto" data-src="audios/orni-punto-encuentro.mp3" data-titulo="Escuchar: cómo evacuar al punto de encuentro" data-dur="31">
+      <audio controls preload="none" src="audios/orni-punto-encuentro.mp3"></audio>
+      <p class="audio__texto">Evacuación hacia el punto de encuentro del Campus Cajicá. Cuando suene la alarma o lo indique la brigada, deja lo que estés haciendo y sal caminando, sin correr, por la ruta señalizada. Sigue las flechas verdes de salida y las instrucciones de los brigadistas. Ayuda a las personas con discapacidad o movilidad reducida. Dirígete a la zona abierta más cercana, lejos de edificios, árboles y cables. Repórtate con tu docente o con la brigada, y no regreses a los edificios hasta que la brigada lo autorice.</p>
+    </div>
+    <p class="bajada">Km 2 vía Cajicá – Zipaquirá. Cambia entre vista <strong>satélite</strong> y <strong>calles</strong>, toca un marcador o usa la lista accesible. El botón “¿Cuál me queda más cerca?” usa tu GPS.</p>
+    <div class="leyenda" aria-hidden="true">
+      <span><span class="pin pin--pe"><span>PE</span></span> Zona de encuentro</span>
+      <span><span class="pin pin--enf"><span>+</span></span> Enfermería</span>
+      <span><span class="pin pin--ref"><span>i</span></span> Referencia</span>
+      <span><span class="pin pin--yo"><span>•</span></span> Tú</span>
+    </div>
+    <div class="mapa-grid">
+      <div>
+        <div id="mapa-campus" class="mapa" role="region" aria-label="Mapa interactivo del Campus Cajicá. La misma información está en la lista de puntos a continuación." aria-describedby="mapa-ayuda"></div>
+        <p id="mapa-ayuda" class="sr-only">Usa las flechas para desplazar el mapa y más o menos para acercar. Para una navegación más sencilla usa la lista de puntos.</p>
+        <div class="acciones" style="margin-top:10px">
+          <button class="boton boton--verde" type="button" id="btn-cercano"><svg class="ico" aria-hidden="true"><use href="#i-navigation"/></svg>¿Cuál me queda más cerca?</button>
+          <a class="boton" href="https://www.google.com/maps/search/?api=1&amp;query=4.942184%2C-74.012564" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="#i-external-link"/></svg>Abrir campus en Google Maps<span class="sr-only"> (abre en otra pestaña)</span></a>
+        </div>
+        <p id="cercano-estado" role="status" aria-live="polite" style="margin-top:8px"></p>
+      </div>
+      <div>
+        <h3>Lista de puntos (accesible)</h3>
+        <ul class="puntos" id="lista-puntos"></ul>
+      </div>
+    </div>
+    <p class="aviso-mapa" style="margin-top:16px"><strong>Importante:</strong> la enfermería y los edificios provienen del mapa real de OpenStreetMap. Las zonas de encuentro marcadas son áreas abiertas del campus lejos de edificios; los puntos <strong>oficiales</strong> los define la Brigada de Emergencias de la UMNG: sigue siempre la señalización verde y las instrucciones de los brigadistas.</p>
+  </div>
+</section>
+
+<!-- ====== 4. Directorio ====== -->
+<section class="seccion" id="directorio" aria-labelledby="t-directorio" data-seccion="directorio">
+  <div class="contenedor">
+    <div class="seccion__cab">
+      <div class="seccion__titulo"><span class="seccion__num" aria-hidden="true">4</span><h2 id="t-directorio">Directorio de emergencias</h2></div>
+    </div>
+    <div class="audio" data-src="audios/orni-tour-directorio.mp3" data-titulo="Escuchar: cómo usar el directorio" data-dur="15">
+      <audio controls preload="none" src="audios/orni-tour-directorio.mp3"></audio>
+      <p class="audio__texto">En el directorio, toca cualquier número y tu celular empezará la llamada. Más abajo puedes llenar tu ficha médica: tipo de sangre, alergias, medicamentos y un contacto de emergencia. Se guarda solo en este dispositivo y funciona sin internet.</p>
+    </div>
+    <p class="bajada">Toca un número para llamar. En Cajicá, la línea <strong>123</strong> integra Policía, Bomberos, Gestión del Riesgo, Tránsito y Salud.</p>
+    <ul class="directorio">
+      <li class="contacto contacto--123">
+        <div><p class="contacto__nombre">Línea Única de Emergencias</p><p class="contacto__desc">Policía, Bomberos, ambulancias y Gestión del Riesgo. Gratis desde cualquier celular.</p></div>
+        <a class="contacto__tel" href="tel:123" aria-label="Llamar al 1 2 3, Línea Única de Emergencias"><svg class="ico" aria-hidden="true"><use href="#i-phone-call"/></svg>123</a>
+      </li>
+      <li class="contacto" style="--c: var(--rojo-osc)">
+        <div><p class="contacto__nombre">Bomberos</p><p class="contacto__desc">Incendios, fugas de gas, rescates y materiales peligrosos.</p></div>
+        <a class="contacto__tel" href="tel:119" aria-label="Llamar a Bomberos, 1 1 9"><svg class="ico" aria-hidden="true"><use href="#i-flame"/></svg>119</a>
+      </li>
+      <li class="contacto">
+        <div><p class="contacto__nombre">Cruz Roja Colombiana</p><p class="contacto__desc">Atención prehospitalaria y socorro.</p></div>
+        <a class="contacto__tel" href="tel:132" aria-label="Llamar a Cruz Roja, 1 3 2"><svg class="ico" aria-hidden="true"><use href="#i-cross"/></svg>132</a>
+      </li>
+      <li class="contacto" style="--c: var(--verde)">
+        <div><p class="contacto__nombre">Defensa Civil</p><p class="contacto__desc">Desastres naturales, búsqueda y rescate.</p></div>
+        <a class="contacto__tel" href="tel:144" aria-label="Llamar a Defensa Civil, 1 4 4"><svg class="ico" aria-hidden="true"><use href="#i-life-buoy"/></svg>144</a>
+      </li>
+      <li class="contacto" style="--c: #4a3aa8">
+        <div><p class="contacto__nombre">UMNG – Conmutador</p><p class="contacto__desc">Pide la Brigada de Emergencias o la Seguridad del Campus Cajicá.</p></div>
+        <a class="contacto__tel" href="tel:+576016500000" aria-label="Llamar a la Universidad Militar, 601 650 0000"><svg class="ico" aria-hidden="true"><use href="#i-building-2"/></svg>(601) 650 0000</a>
+      </li>
+      <li class="contacto" style="--c: #8a2a7a">
+        <div><p class="contacto__nombre">Línea 155</p><p class="contacto__desc">Orientación a mujeres víctimas de violencia. Gratuita, 24 horas.</p></div>
+        <a class="contacto__tel" href="tel:155" aria-label="Llamar a la línea 1 5 5"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>155</a>
+      </li>
+    </ul>
+
+    <h3 style="margin-top:32px">Cómo dar el aviso en 20 segundos</h3>
+    <div class="audio audio--compacto" data-src="audios/orni-llamada-123.mp3" data-titulo="Escuchar: cómo llamar al 123" data-dur="27">
+      <audio controls preload="none" src="audios/orni-llamada-123.mp3"></audio>
+      <p class="audio__texto">Cómo llamar a la línea 123. Es gratuita y funciona desde cualquier celular. Habla despacio y responde cuatro cosas: dónde estás, por ejemplo, Universidad Militar Nueva Granada, Campus Cajicá, kilómetro 2 vía Cajicá Zipaquirá, y el edificio. Qué está pasando. Cuántas personas están afectadas. Y quién eres, con tu número de teléfono. No cuelgues hasta que el operador te lo indique.</p>
+    </div>
+    <ol class="aviso20">
+      <li><strong>Dónde</strong><br>UMNG Campus Cajicá, Km 2 vía Cajicá–Zipaquirá + edificio y piso.<br><button class="boton boton--chico" type="button" id="btn-copiar-dir" style="margin-top:8px"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg>Copiar dirección</button></li>
+      <li><strong>Qué pasa</strong><br>“Persona inconsciente”, “incendio en laboratorio”…</li>
+      <li><strong>Cuántos</strong><br>Personas afectadas y si hay alguien con discapacidad.</li>
+      <li><strong>Quién eres</strong><br>Tu nombre y teléfono. <strong>No cuelgues</strong> hasta que te lo indiquen.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ====== 5. Ficha médica ====== -->
+<section class="seccion" id="ficha" aria-labelledby="t-ficha" data-seccion="ficha">
+  <div class="contenedor">
+    <div class="seccion__cab">
+      <div class="seccion__titulo"><span class="seccion__num" aria-hidden="true">5</span><h2 id="t-ficha">Mi ficha médica de emergencia</h2></div>
+    </div>
+    <div class="audio audio--compacto" data-tts="true" data-titulo="Escuchar (voz del dispositivo)">
+      <p class="audio__texto">Tu ficha médica de emergencia. Llena tu tipo de sangre, alergias, medicamentos, EPS y un contacto de emergencia. La información se guarda solamente en este dispositivo, no se envía a internet. Puedes mostrarla a los brigadistas, imprimirla o llamar a tu contacto con un toque.</p>
+    </div>
+    <p class="bajada">Se guarda <strong>solo en este dispositivo</strong> (almacenamiento local del navegador). No se envía a ningún servidor. Muéstrala a los brigadistas o a los paramédicos.</p>
+    <div class="ficha">
+      <form class="form" id="form-ficha" novalidate aria-describedby="ficha-priv">
+        <p id="ficha-priv" class="sr-only">Formulario privado. Los datos se guardan únicamente en este navegador.</p>
+        <div class="fila-2">
+          <div class="campo"><label for="f-nombre">Nombre completo</label><input id="f-nombre" name="nombre" autocomplete="name"></div>
+          <div class="campo"><label for="f-doc">Documento</label><input id="f-doc" name="documento" inputmode="numeric" autocomplete="off"></div>
+        </div>
+        <div class="fila-2">
+          <div class="campo"><label for="f-sangre">Tipo de sangre (RH)</label>
+            <select id="f-sangre" name="sangre"><option value="">Sin indicar</option><option>O+</option><option>O−</option><option>A+</option><option>A−</option><option>B+</option><option>B−</option><option>AB+</option><option>AB−</option></select></div>
+          <div class="campo"><label for="f-eps">EPS / seguro</label><input id="f-eps" name="eps"></div>
+        </div>
+        <div class="campo"><label for="f-alergias">Alergias</label><textarea id="f-alergias" name="alergias" aria-describedby="f-alergias-ayuda"></textarea><small id="f-alergias-ayuda">Medicamentos, alimentos, picaduras, látex…</small></div>
+        <div class="campo"><label for="f-condiciones">Condiciones y medicamentos</label><textarea id="f-condiciones" name="condiciones"></textarea></div>
+        <fieldset class="campo" style="border:0;padding:0;margin:0">
+          <legend>Contacto de emergencia</legend>
+          <div class="fila-2">
+            <div class="campo"><label for="f-cnombre">Nombre y parentesco</label><input id="f-cnombre" name="contactoNombre"></div>
+            <div class="campo"><label for="f-ctel">Teléfono</label><input id="f-ctel" name="contactoTel" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="f-ctel-err"><small id="f-ctel-err" aria-live="polite"></small></div>
+          </div>
+        </fieldset>
+        <div class="acciones">
+          <button class="boton boton--primario" type="submit"><svg class="ico" aria-hidden="true"><use href="#i-save"/></svg>Guardar en este dispositivo</button>
+          <button class="boton" type="button" id="ficha-borrar"><svg class="ico" aria-hidden="true"><use href="#i-trash-2"/></svg>Borrar</button>
+        </div>
+        <p id="ficha-estado" role="status" aria-live="polite"></p>
+      </form>
+      <div>
+        <div class="tarjeta-medica" id="tarjeta-medica" aria-labelledby="tm-titulo" role="region">
+          <h3 id="tm-titulo" style="margin:0">Tarjeta de emergencia</h3>
+          <div><span class="sr-only">Tipo de sangre: </span><span class="tarjeta-medica__sangre" id="tm-sangre">—</span></div>
+          <dl id="tm-datos"></dl>
+          <p id="tm-vacio" style="margin:0">Aún no has guardado datos.</p>
+        </div>
+        <div class="acciones" style="margin-top:10px">
+          <a class="boton boton--verde" id="tm-llamar" href="#" aria-disabled="true"><svg class="ico" aria-hidden="true"><use href="#i-phone-call"/></svg>Llamar a mi contacto</a>
+          <button class="boton" type="button" id="tm-sms"><svg class="ico" aria-hidden="true"><use href="#i-message-square-text"/></svg>Enviar mi ubicación</button>
+          <button class="boton" type="button" id="tm-imprimir"><svg class="ico" aria-hidden="true"><use href="#i-printer"/></svg>Imprimir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 6. Kit ====== -->
+<section class="seccion" id="kit" aria-labelledby="t-kit" data-seccion="kit">
+  <div class="contenedor">
+    <div class="seccion__cab">
+      <div class="seccion__titulo"><span class="seccion__num" aria-hidden="true">6</span><h2 id="t-kit">Kit de emergencia: lista interactiva</h2></div>
+    </div>
+    <div class="audio audio--compacto" data-src="audios/orni-mochila.mp3" data-titulo="Escuchar: qué lleva tu kit" data-dur="24">
+      <audio controls preload="none" src="audios/orni-mochila.mp3"></audio>
+      <p class="audio__texto">Tu kit de emergencia. Ten lista una maleta con: agua potable, alimentos no perecederos, linterna y pilas, radio, botiquín y tus medicamentos, un silbato para pedir ayuda, copia de tus documentos en bolsa plástica, algo de dinero en efectivo, ropa abrigada, artículos de aseo y una batería para el celular. Revísala cada seis meses.</p>
+    </div>
+    <p class="bajada">Marca lo que ya tienes. Tu avance se guarda en este dispositivo.</p>
+    <div class="progreso" role="progressbar" aria-label="Avance del kit" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0" id="kit-progreso"><div class="progreso__barra" id="kit-barra"></div></div>
+    <p id="kit-texto" aria-live="polite" style="margin:6px 0 14px">0 de 12 elementos</p>
+    <ul class="check" id="kit-lista"></ul>
+  </div>
+</section>
+
+<!-- ====== 7. Fuentes ====== -->
+<section class="seccion" id="fuentes" aria-labelledby="t-fuentes" data-seccion="fuentes">
+  <div class="contenedor">
+    <div class="seccion__cab">
+      <div class="seccion__titulo"><span class="seccion__num" aria-hidden="true">7</span><h2 id="t-fuentes">Fuentes oficiales</h2></div>
+    </div>
+    <p class="bajada">Toda la información crítica de esta guía está respaldada por estas entidades. Los enlaces abren en otra pestaña.</p>
+    <ul class="fuentes">
+      <li><a href="https://portal.gestiondelriesgo.gov.co/" target="_blank" rel="noopener noreferrer">UNGRD – Unidad Nacional para la Gestión del Riesgo de Desastres (Colombia)</a></li>
+      <li><a href="https://www.sgc.gov.co/" target="_blank" rel="noopener noreferrer">Servicio Geológico Colombiano – monitoreo sísmico</a></li>
+      <li><a href="https://www.shakeout.org/dropcoverholdon/" target="_blank" rel="noopener noreferrer">Great ShakeOut – Agáchate, cúbrete y sujétate</a></li>
+      <li><a href="https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines" target="_blank" rel="noopener noreferrer">American Heart Association – Guías de RCP y ACE 2025</a></li>
+      <li><a href="https://www.osha.gov/etools/evacuation-plans-procedures/emergency-standards/portable-extinguishers/use" target="_blank" rel="noopener noreferrer">OSHA – Uso del extintor portátil (método PASS)</a></li>
+      <li><a href="https://www.nfpa.org/education-and-research/home-fire-safety/escape-planning" target="_blank" rel="noopener noreferrer">NFPA – Planificación de escape ante incendios</a></li>
+      <li><a href="https://www.stopthebleed.org/" target="_blank" rel="noopener noreferrer">Stop the Bleed – control de hemorragias</a></li>
+      <li><a href="https://www.weather.gov/safety/lightning-safety" target="_blank" rel="noopener noreferrer">NOAA / National Weather Service – seguridad ante rayos</a></li>
+      <li><a href="https://www.cisa.gov/resources-tools/resources/active-shooter-poster" target="_blank" rel="noopener noreferrer">CISA – Afiche de preparación ante tirador activo</a></li>
+      <li><a href="https://www.cruzrojacolombiana.org/" target="_blank" rel="noopener noreferrer">Cruz Roja Colombiana – capacitación en primeros auxilios</a></li>
+      <li><a href="https://www.defensacivil.gov.co/" target="_blank" rel="noopener noreferrer">Defensa Civil Colombiana</a></li>
+      <li><a href="https://www.policia.gov.co/noticia/linea-155-orientacion-mujeres-victimas-violencia" target="_blank" rel="noopener noreferrer">Policía Nacional – Línea 155</a></li>
+      <li><a href="https://www.cajica.gov.co/" target="_blank" rel="noopener noreferrer">Alcaldía de Cajicá – Línea 123 integrada (C4)</a></li>
+      <li><a href="https://www.umng.edu.co/" target="_blank" rel="noopener noreferrer">Universidad Militar Nueva Granada</a></li>
+      <li><a href="https://www.openstreetmap.org/way/349594617" target="_blank" rel="noopener noreferrer">OpenStreetMap – Campus UMNG Cajicá (datos del mapa)</a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <p><strong>Guía de Emergencias · UMNG Campus Cajicá.</strong> Material educativo. No reemplaza las instrucciones de la Brigada de Emergencias ni de las autoridades.</p>
+    <p>Ante una emergencia real llama al <a href="tel:123">123</a>. Voces narradas generadas con ElevenLabs. Mapa © colaboradores de OpenStreetMap; imágenes satelitales © Esri.</p>
+  </div>
+</footer>
+
+<!-- ====== Mascota Orni: guía interactiva ====== -->
+<div class="mascota mascota--reposo" id="mascota">
+  <section class="globo" id="globo" role="dialog" aria-modal="false" aria-labelledby="globo-titulo" hidden>
+    <div class="globo__cab">
+      <p class="globo__titulo" id="globo-titulo" tabindex="-1">Orni</p>
+      <span class="globo__paso" id="globo-paso"></span>
+      <button class="globo__cerrar" type="button" id="globo-cerrar" aria-label="Cerrar la guía de Orni"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+    <p class="globo__texto" id="globo-texto" aria-live="polite"></p>
+    <div class="globo__acciones">
+      <button class="boton boton--chico" type="button" id="globo-ant"><svg class="ico" aria-hidden="true"><use href="#i-chevron-left"/></svg>Anterior</button>
+      <button class="boton boton--chico boton--azul" type="button" id="globo-oir" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#i-volume-2"/></svg><span>Escuchar</span></button>
+      <button class="boton boton--chico boton--primario" type="button" id="globo-sig"><span>Siguiente</span><svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+    </div>
+  </section>
+  <button class="mascota__boton" type="button" id="mascota-btn" aria-expanded="false" aria-controls="globo" aria-label="Abrir la guía de Orni, la mascota brigadista">
+    <img class="mascota__img" id="mascota-img" src="img/pato-reposo.webp" alt="" width="300" height="425">
+    <span class="mascota__insignia" aria-hidden="true">Guía</span>
+  </button>
+</div>
+
+<!-- Diálogo de atajos -->
+<dialog id="dlg-atajos" aria-labelledby="dlg-atajos-t">
+  <h2 id="dlg-atajos-t" style="font-size:1.3rem">Atajos de teclado</h2>
+  <dl class="atajos">
+    <dt><kbd>Tab</kbd></dt><dd>Avanzar al siguiente control (Mayús + Tab retrocede).</dd>
+    <dt><kbd>A</kbd></dt><dd>Escuchar o pausar el audio de la sección en la que estás.</dd>
+    <dt><kbd>Alt</kbd>+<kbd>Mayús</kbd>+<kbd>E</kbd></dt><dd>Ir al botón de llamada 123.</dd>
+    <dt><kbd>Alt</kbd>+<kbd>Mayús</kbd>+<kbd>A</kbd></dt><dd>Escuchar o pausar el audio de la sección actual.</dd>
+    <dt><kbd>Alt</kbd>+<kbd>Mayús</kbd>+<kbd>G</kbd></dt><dd>Abrir la guía de Orni.</dd>
+    <dt><kbd>Alt</kbd>+<kbd>Mayús</kbd>+<kbd>1</kbd>…<kbd>7</kbd></dt><dd>Ir a la sección 1 a 7.</dd>
+    <dt><kbd>Esc</kbd></dt><dd>Detener audio y cerrar ventanas.</dd>
+    <dt><kbd>?</kbd></dt><dd>Mostrar esta ayuda.</dd>
+  </dl>
+  <form method="dialog" style="margin-top:14px"><button class="boton boton--primario" value="cerrar">Cerrar</button></form>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<p class="sr-only" id="anunciador" aria-live="polite"></p>
+<p class="sr-only" id="alerta" role="alert"></p>
+
+<script src="vendor/lottie_light.min.js"></script>
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="js/lottie-data.js"></script>
+<script src="js/nucleo.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/protocolos.js"></script>
+<script src="js/animaciones.js"></script>
+<script src="js/mapa.js"></script>
+<script src="js/ficha.js"></script>
+<script src="js/mascota.js"></script>
+<script src="js/pwa.js"></script>
+</body>
+</html>
